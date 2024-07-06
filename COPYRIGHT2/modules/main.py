@@ -136,11 +136,11 @@ async def handle_message(client, message):
         
 # -------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------
-@app.on_edited_message(filters.group & ~filters.me)
+    @app.on_edited_message(filters.group & ~filters.me)
 async def delete_edited_messages(client, edited_message):
     await edited_message.delete()
-    #  user_mention = from_user.mention
-        await message.reply_text(f"@{message.from_user.username} just edited a message and i delete it 🤡🤡")
+    await client.send_message(edited_message.chat.id, f"@{edited_message.from_user.username} just edited a message and I deleted it 🤡🤡 ")
+    
 
 
 
